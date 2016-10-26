@@ -1,5 +1,10 @@
 $( document ).ready(function() {
-    $("#myForm").submit(function(e) {
+$('#myForm').validator().on('submit', function (e) {
+  if (e.isDefaultPrevented()) {
+    // handle the invalid form...
+  } else {
+    // everything looks good!
+    //$("#myForm").submit(function(e) {
 
     var url = "/contacto.php"; // the script where you handle the form input.
 
@@ -23,5 +28,8 @@ $( document ).ready(function() {
 
     e.preventDefault();
     // avoid to execute the actual submit of the form.
-});
+//});
+  }
+})
+    
 });
