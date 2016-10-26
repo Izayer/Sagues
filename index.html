@@ -238,7 +238,15 @@
 
 					</div>
 					<div class="col-md-6">
-						<form role="form" data-toggle="validator" id="myForm">
+						<div id="ok" class="alert alert-success alert-dismissible" hidden role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Enviado!</strong> Gracias por contactar con nosotros.
+						</div>
+						<div id="error" class="alert alert-danger alert-dismissible" hidden role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Error!</strong> No se ha podido enviar el mensaje.
+						</div>
+						<form role="form" data-toggle="validator" id="myForm" action="contacto.php" method="POST">
 							<div class="form-group has-feedback">
 								<div class="input-group">
 									<input type="text" class="form-control" data-minlength="2" id="inputName" name="inputName" placeholder="Nombre" data-error="Inserte su nombre correctamente" required>
@@ -263,10 +271,12 @@
 							<div class="form-group">
 								<div class="checkbox">
 									<label>
-									<input type="checkbox" id="terms" name="terms" data-error="Clicka en el cuadro si has leído y aceptas los terminos" required>
-									 He leído y Acepto los<a data-toggle="modal" 
+									<input type="checkbox" id="terms" name="terms" data-error="Clicka en el cuadro si has leído y aceptas los terminos y condiciones" required>
+									 He leído y Acepto los <a data-toggle="modal" 
    data-target="#largeModal" 
-   data-remote="avisolegal.html"> Términos</a> y <a href="avisolegal.html" target="_blank">Condiciones </a> de protección de datos.
+   data-remote="avisolegal.html"> Términos </a> y <a data-toggle="modal" 
+   data-target="#largeModal" 
+   data-remote="avisolegal.html"> Condiciones </a> de protección de datos.
 									</label>
 								<div class="help-block with-errors"></div>
 								</div>
@@ -275,7 +285,6 @@
 								<button type="submit" name="enviar" class="btn btn-primary">ENVIAR</button>
 							</div>
                         </form>
-                        
                         <!-- modal terminos y servicios-->
 						<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
 						<div class="modal-dialog modal-lg">
@@ -294,7 +303,9 @@
 					<div class="col-md-12">
 						<div class="block">
 							<a href="#"><img src="img/logo.png" alt=""></a>
-							<p>Todos los derechos reservados © 2016 | <a href="avisolegal.html" target="_blank"> Aviso Legal y Politica de Cookies</a> |  <a href="http://www.marrazkilo.com" target="_blank"> Marrazkilo</a></p> 
+							<p>Todos los derechos reservados © 2016 | <a href="" data-toggle="modal" 
+   data-target="#largeModal"  
+   data-remote="avisolegal.html" > Aviso Legal y Politica de Cookies </a> |  <a href="http://www.marrazkilo.com" target="_blank"> Marrazkilo</a></p> 
 						</div>
 					</div>
 				</div>
@@ -317,6 +328,7 @@
 		<script src="js/jquery.sticky.js"></script>
 		<script src="js/jquery.nav.js"></script>
 		<script type="text/javascript" src="js/validator.js"></script>
+		<script type="text/javascript" src="js/ajaxContacto.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

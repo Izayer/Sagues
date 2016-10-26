@@ -1,4 +1,8 @@
 <?php
+  $name = $_POST['inputName'];
+  $email = $_POST['inputEmail'];
+  $message = $_POST['inputMessage'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +24,12 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Bidali da</h1>
+    <h1>Nombre</h1>
+    <p><?php echo $name ?></p>
+    <h1>Email</h1>
+    <p><?php echo $email ?></p>
+    <h1>Mensage</h1>
+    <p><?php echo $message ?></p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -28,3 +37,7 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+
+<?php
+  header('Location: mailer.php');
+?>
