@@ -6,7 +6,7 @@ $('#myForm').validator().on('submit', function (e) {
     // everything looks good!
     //$("#myForm").submit(function(e) {
 
-    var url = "/contacto.php"; // the script where you handle the form input.
+    var url = "/mailer.php"; // the script where you handle the form input.
 
     $.ajax({
            type: "POST",

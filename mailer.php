@@ -1,4 +1,7 @@
 <?php
+    $inputName = $_POST['inputName'];
+    $inputEmail = $_POST['inputEmail'];
+    $inputMessage = $_POST['inputMessage'];
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  */
@@ -59,19 +62,33 @@ $mail->oauthRefreshToken = "1/kbjhNkS_rb0Rpy8DwsIv6tMnReGRYoAJx1cFGVoqels";
 
 //Set who the message is to be sent from
 //For gmail, this generally needs to be the same as the user you logged in as
-$mail->setFrom('maialensagues@gmail.com', 'Web Sagues');
+$mail->setFrom("$inputEmail", "$inputName");
 
 //Set who the message is to be sent to
 $mail->addAddress('maialensagues@gmail.com', 'Web Sagues');
 
+
+
 //Set the subject line
 $mail->Subject = 'Contacto';
+function get_include_contents($filename, $variablesToMakeLocal) {
+    extract($variablesToMakeLocal);
+    if (is_file($filename)) {
+        ob_start();
+        include $filename;
+        return ob_get_clean();
+    }
+    return false;
+}
+$mail->msgHTML(get_include_contents('contacto.php', $_POST)); // HTML -> PHP!
 
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('contacto.php'), dirname(__FILE__));
 
-//Replace the plain text body with one created manually
+
+// //Read an HTML message body from an external file, convert referenced images to embedded,
+// //convert HTML into a basic plain-text alternative body
+// //$mail->msgHTML(file_get_contents('contacto.php'), dirname(__FILE__));
+// $mail->msgHTML($body);
+// //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 
 //Attach an image file
