@@ -26,7 +26,7 @@ session_start();
 
 //If this automatic URL doesn't work, set it yourself manually
 $redirectUri = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-$redirectUri = 'https://sagues-izayer.c9users.io/get_oauth_token.php';
+$redirectUri = 'https://sagues.es/get_oauth_token.php';
 
 //These details obtained are by setting up app in Google developer console.
 $clientId = '252467488067-bk0h65drpr922gtdo67mesrev3leeh7s.apps.googleusercontent.com';
