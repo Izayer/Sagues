@@ -65,7 +65,7 @@ $mail->oauthRefreshToken = "1/kbjhNkS_rb0Rpy8DwsIv6tMnReGRYoAJx1cFGVoqels";
 $mail->setFrom("$inputEmail", "$inputName");
 
 //Set who the message is to be sent to
-$mail->addAddress('maialensagues@gmail.com', 'Web Sagues');
+$mail->addAddress('info@marrazkilo.com', 'Web Sagues');
 
 
 

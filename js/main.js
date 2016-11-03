@@ -99,6 +99,30 @@ $(document).ready(function() {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+        var marker = new google.maps.Marker({
+    position: {lat: 43.344706, lng: -1.799683},
+    map: map,
+    title: 'Hello World!'
+});
+         marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+     
+      var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h3 id="firstHeading" class="firstHeading">Sagüés Agente Comercial Material Deportivo</h3>'+
+
+      '<div id="bodyContent">'+
+      '<p> Vera de Bidasoa 18-20 Bajos, 20301 Irún, Guipúzcoa</p>'+
+     '<p>  20301 Irún, Guipúzcoa</p>'+
+     '<p> 43.344737, -1.798986 </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });     
     }
 
 
